@@ -8,6 +8,12 @@ def bubble_sort(arr, sorting_order):
 
     # Copy input list to results list
     arr_result = arr.copy()
+    if not arr:
+        return 0  # Return 0 for empty lists
+
+        # Ensure all elements in the list are integers
+    if not all(isinstance(item, int) for item in arr):
+        return 2  # Return 2 for non-integer values
 
     # Get number of elements in the list
     n = len(arr_result)
@@ -34,7 +40,7 @@ def bubble_sort(arr, sorting_order):
                     # Return an empty array
                     arr_result = []
     else:
-        arr_result = -1
+        arr_result = 1
 
     return arr_result
 
